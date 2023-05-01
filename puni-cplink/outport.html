@@ -17,6 +17,16 @@ let params = url.searchParams;
  <body>
 <script>
 document.write("https://ywp.page.link/?link=https://yokai-punipuni.jp/?comeback_code=" + params.get('frendid') + "&apn=com.Level5.YWP");
+<button onclick="goToLink()">リンクに移動する</button>
+
+<script>
+// JavaScriptコード
+function goToLink() {
+  var frendid = "https://ywp.page.link/?link=https://yokai-punipuni.jp/?comeback_code=" + params.get('frendid') + "&apn=com.Level5.YWP""; // ここにフレンドIDを取得するコードを書きます
+  var linkUrl = "https://www.tmyt105.ml/puni-cplink/shere.html" + (frendid) + ;
+  window.location.href = linkUrl;
+}
+</script>
 	 </script>
     </body>
 </html>
