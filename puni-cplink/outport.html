@@ -11,12 +11,13 @@ let params = url.searchParams;
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 <meta name="robots" content="all">
-	<title>決済完了</title>
+	<title>リンクが出来たよ</title>
  <link rel="stylesheet" href="/css/main.css">
 	</head>
  <body>
-var frendid = (params.get('frendid')
+<script>var frendid = (params.get('frendid')
 var linkUrl = "https://ywp.page.link/?link=" + encodeURIComponent("https://yokai-punipuni.jp/?comeback_code=" + frendid) + "&apn=com.Level5.YWP";
 document.write(linkUrl);
+	 </script>
     </body>
 </html>
