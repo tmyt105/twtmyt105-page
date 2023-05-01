@@ -15,9 +15,8 @@ let params = url.searchParams;
  <link rel="stylesheet" href="/css/main.css">
 	</head>
  <body>
-<script>var frendid = (params.get('frendid')
-var linkUrl = "https://ywp.page.link/?link=" + encodeURIComponent("https://yokai-punipuni.jp/?comeback_code=" + frendid) + "&apn=com.Level5.YWP";
-document.write(linkUrl);
+<script>
+document.write("https://ywp.page.link/?link=" + encodeURIComponent("https://yokai-punipuni.jp/?comeback_code=" + params.get('frendid') + "&apn=com.Level5.YWP");
 	 </script>
     </body>
 </html>
