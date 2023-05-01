@@ -1,0 +1,22 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- google analytics tag -->
+    <script>
+    let url = new URL(location.href);
+let params = url.searchParams;
+    </script>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+<meta name="robots" content="all">
+	<title>決済完了</title>
+ <link rel="stylesheet" href="/css/main.css">
+	</head>
+ <body>
+var frendid = (params.get('frendid')
+var linkUrl = "https://ywp.page.link/?link=" + encodeURIComponent("https://yokai-punipuni.jp/?comeback_code=" + frendid) + "&apn=com.Level5.YWP";
+document.write(linkUrl);
+    </body>
+</html>
