@@ -16,14 +16,28 @@
       <h2>メニュー</h2>
       <ul>
      <img src="img/menu_31352.png" height="60px">
+<div id="container">
+  <img src="img/menu_31352.png" height="60px">
+</div>
+
 <script>
-function zoom() {
-  var img = document.getElementById("menu_31352");
-  img.style.width = "500px";
-  img.style.height = "500px";
-}
+  function zoom() {
+    var container = document.getElementById("container");
+    var img = container.querySelector("img");
+    img.style.width = "100%";
+    img.style.height = "100%";
+  }
+
+  document.getElementById("container").addEventListener("click", zoom);
+
+  function hide() {
+    var container = document.getElementById("container");
+    var img = container.querySelector("img");
+    img.style.display = "none";
+  }
+
+  document.addEventListener("click", hide, false);
 </script>
-<input type="button" value="拡大" onclick="zoom()">
       </ul>
     </section>
     <section class="infoweb">
