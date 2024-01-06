@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Discord Invite Link Detector</title>
+  <script>
+    const axios = require('axios');
+
+// This endpoint should match the one you set up on your server
+const endpoint = 'http://localhost:3000/endpoint';
+
+axios.get(endpoint).then((response) => {
+   const data = response.data;
+   document.getElementById('senderId').innerText += data.senderId;
+   document.getElementById('inviteLink').innerText += data.inviteLink;
+}).catch((error) => {
+   console.log(error);
+});
+</script>
+</head>
+<body>
+   <h1>Discord Invite Link Detector</h1>
+   <p id="senderId">Sender ID: </p>
+   <p id="inviteLink">Invite Link: </p>
+</body>
+</html>
