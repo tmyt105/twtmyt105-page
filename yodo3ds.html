@@ -1,34 +1,40 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>YouTube埋め込み</title>
+  <title>YouTube埋め込み (3DS互換)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+    body { font-family: sans-serif; }
+    #videoContainer { width: 480px; height: 270px; } /* 3DS画面サイズに合わせる */
+  </style>
+  <script>
+function embedVideo() {
+  var videoId = document.getElementById('videoId').value;
+  var videoContainer = document.getElementById('videoContainer');
+
+  if (videoId) {
+    // iframe要素を作成 (互換性のためにcreateElementを使用)
+    var iframe = document.createElement('iframe');
+    iframe.width = "480";
+    iframe.height = "270";
+    iframe.src = "https://www.youtube.com/embed/" + videoId;
+    iframe.title = "YouTube video player";
+    iframe.frameBorder = "0";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true; // 3DSはFullscreenに対応
+
+    // videoContainerにiframeを追加 (互換性のためにappendChildを使用)
+    videoContainer.innerHTML = '';
+    videoContainer.appendChild(iframe);
+  } else {
+    alert('動画IDを入力してください。');
+  }
+}
+</script>
 </head>
 <body>
   <input type="text" id="videoId" placeholder="YouTube動画IDを入力">
   <button onclick="embedVideo()">実行</button>
   <div id="videoContainer"></div>
-
-  <script>function embedVideo() {
-  const videoId = document.getElementById('videoId').value;
-  const videoContainer = document.getElementById('videoContainer');
-
-  if (videoId) {
-    // iframe要素を作成
-    const iframe = document.createElement('iframe');
-    iframe.width = "560"; // 幅
-    iframe.height = "315"; // 高さ
-    iframe.src = `https://www.youtube.com/embed/${videoId}`;
-    iframe.title = "YouTube video player";
-    iframe.frameborder = "0";
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen;
-
-    // videoContainerにiframeを追加
-    videoContainer.innerHTML = ''; // 既存のコンテンツをクリア
-    videoContainer.appendChild(iframe);
-  } else {
-    alert('動画IDを入力してください。');
-  }
-}</script>
 </body>
 </html>
