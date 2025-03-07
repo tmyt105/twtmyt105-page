@@ -12,8 +12,18 @@ function embedVideo() {
   var videoId = document.getElementById('videoId').value;
   var videoContainer = document.getElementById('videoContainer');
 
+  // デフォルトの動画ID
+  var defaultVideoId = "-5QWaicJVfI"; // 例: Rick Astley - Never Gonna Give You Up
+
   if (videoId) {
-    // iframe要素を作成 (互換性のためにcreateElementを使用)
+    // 入力された動画IDを使用
+    embed(videoId);
+  } else {
+    // デフォルトの動画IDを使用
+    embed(defaultVideoId);
+  }
+
+  function embed(videoId) {
     var iframe = document.createElement('iframe');
     iframe.width = "480";
     iframe.height = "270";
@@ -21,13 +31,10 @@ function embedVideo() {
     iframe.title = "YouTube video player";
     iframe.frameBorder = "0";
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true; // 3DSはFullscreenに対応
+    iframe.allowFullscreen = true;
 
-    // videoContainerにiframeを追加 (互換性のためにappendChildを使用)
     videoContainer.innerHTML = '';
     videoContainer.appendChild(iframe);
-  } else {
-    alert('動画IDを入力してください。');
   }
 }
 </script>
